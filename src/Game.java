@@ -1,20 +1,19 @@
-import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
-public class Game {
+public abstract class Game {
+
     private static final int SLEEP = 25;
     private boolean playing = true;
     private long before;
-
     private RenderingEngine renderingEngine;
 
-    private int score;
-    private Ball ball;
+    protected abstract void intialize();
+    protected abstract void update();
+    protected abstract void drawOnBuffer(Graphics2D bufferEngine);
 
     public Game() {
         renderingEngine = new RenderingEngine();
-        ball = new Ball(25);
+        intialize();
     }
 
     public void start() {
@@ -27,22 +26,6 @@ public class Game {
             sleep();
         }
     }
-
-    private void update() {
-        ball.upate();
-        if (ball.hasTouche()) {
-            score += 5;
-        }
-    }
-
-    private void drawOnBuffer(Graphics2D bufferEngine) {
-       ball.draw(bufferEngine);
-
-        bufferEngine.setPaint(Color.WHITE);
-        bufferEngine.drawString("Score: " + score, 10, 32);
-    }
-
-
 
     private void sleep() {
         try {
