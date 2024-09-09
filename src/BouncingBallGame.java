@@ -5,8 +5,6 @@ public final class BouncingBallGame extends Game {
     private int score;
     private Ball ball;
 
-
-
     @Override
     protected void intialize() {
         ball = new Ball(25);
@@ -21,9 +19,8 @@ public final class BouncingBallGame extends Game {
     }
 
     @Override
-    protected void drawOnBuffer(Graphics2D bufferEngine) {
-       ball.draw(bufferEngine);
-        bufferEngine.setPaint(Color.WHITE);
-        bufferEngine.drawString("Score: " + score, 10, 20);
+    protected void draw(Canvas canvas) {
+       ball.draw(canvas);
+       canvas.drawString("Score: " + score, 10, 20, Color.WHITE);
     }
 }
