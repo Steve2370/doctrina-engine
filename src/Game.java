@@ -13,10 +13,14 @@ public abstract class Game {
 
     public Game() {
         renderingEngine = new RenderingEngine();
-        intialize();
     }
 
     public void start() {
+        intialize();
+        run();
+    }
+
+    private void run() {
         renderingEngine.start();
         updateSyncTime();
         while (playing) {
