@@ -1,9 +1,11 @@
 import java.awt.*;
 
-public class BouncingBallGame extends Game {
+public final class BouncingBallGame extends Game {
 
     private int score;
     private Ball ball;
+
+
 
     @Override
     protected void intialize() {
