@@ -25,10 +25,10 @@ public class Ball {
         x += dx;
         y += dy;
         if (hasTouchHorizontal()) {
-            dy *= -1;
+            dx *= -1;
         }
         if (hasTouchVertical()) {
-            dx *= -1;
+            dy *= -1;
         }
     }
 
@@ -39,16 +39,16 @@ public class Ball {
     private void initializePosition() {
         x = randomNumber(radius * 2, 800 - radius * 2);
         y = randomNumber(radius * 2, 600 - radius * 2);
-        dx = randomNumber(0, 1) == 0 ? DEFAULT_SPEED : -DEFAULT_SPEED;
-        dy = randomNumber(0, 1) == 0 ? DEFAULT_SPEED : -DEFAULT_SPEED;
+        dx = randomNumber(0, 1) == 0 ? DEFAULT_SPEED : - DEFAULT_SPEED;
+        dy = randomNumber(0, 1) == 0 ? DEFAULT_SPEED : - DEFAULT_SPEED;
     }
 
     private boolean hasTouchHorizontal() {
-        return x <= radius || x >= 800-radius;
+        return x <= 0 || x >= 800 - radius*2;
     }
 
     private boolean hasTouchVertical() {
-        return y <= radius || y >= 600-radius;
+        return y <= 0 || y >= 600 - radius*2;
     }
 
     public boolean hasTouche() {
