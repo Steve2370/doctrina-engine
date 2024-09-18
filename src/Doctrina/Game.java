@@ -1,3 +1,5 @@
+package Doctrina;
+
 public abstract class Game {
 
 
@@ -8,7 +10,7 @@ public abstract class Game {
     protected abstract void update();
     protected abstract void draw(Canvas canvas);
 
-    public Game() {
+    protected Game() {
         renderingEngine = new RenderingEngine();
     }
 

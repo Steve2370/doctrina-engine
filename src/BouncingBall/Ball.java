@@ -1,3 +1,7 @@
+package BouncingBall;
+
+import Doctrina.Canvas;
+
 import java.awt.*;
 import java.util.Random;
 
@@ -10,11 +14,11 @@ public class Ball {
     private int dx;
     private int dy;
 
-    public Ball(int radius, int speed) {
-        this.radius = radius;
-        this.speed = speed;
-        initializePosition();
-    }
+//    public BouncingBall.Ball(int radius, int speed) {
+//        this.radius = radius;
+//        this.speed = speed;
+//        initializePosition();
+//    }
 
     Ball(int radius) {
         this.radius = radius;
