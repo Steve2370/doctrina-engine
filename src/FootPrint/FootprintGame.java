@@ -7,26 +7,39 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class FootprintGame extends Game {
-    private GamePad gamepad;
-    private Player player;
+    private GamePad gamepadOne;
+    private GamePad gamePadTwo;
+    private Player playerOne;
+    private Player playerTwo;
     private ArrayList<Footprint> footprints;
 
     @Override
     protected void intialize() {
-        gamepad = new GamePad();
-        player = new Player(gamepad);
+        gamepadOne = new GamePad();
+        playerOne = new Player(gamepadOne);
+
+        gamePadTwo = new GamePad();
+        gamePadTwo.useWasdKeys();
+
+        playerTwo = new Player(gamePadTwo);
+
         footprints = new ArrayList<>();
     }
 
     @Override
     protected void update() {
-        if (gamepad.isQuitPressed()) {
+        if (gamepadOne.isQuitPressed()) {
             stop();
         }
-        player.update();
-        if (gamepad.isMoving()) {
-            footprints.add(player.layFootprint());
+        playerOne.update();
+        playerTwo.update();
+        if (gamepadOne.isMoving()) {
+            footprints.add(playerOne.layFootprint());
         }
+        if (gamePadTwo.isMoving()) {
+            footprints.add(playerTwo.layFootprint());
+        }
+
     }
 
     @Override
@@ -35,6 +48,7 @@ public class FootprintGame extends Game {
         for (Footprint footprint : footprints) {
             footprint.draw(canvas);
         }
-        player.draw(canvas);
+        playerOne.draw(canvas);
+        playerTwo.draw(canvas);
     }
 }
