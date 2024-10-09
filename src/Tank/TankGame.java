@@ -24,7 +24,7 @@ public class TankGame extends Game {
         bricks.add(new Brick(280, 120));
         bricks.add(new Brick(304, 170));
         bricks.add(new Brick(440, 140));
-        bricks.add(new Brick(430, 140));
+        bricks.add(new Brick(430, 130));
     }
 
     @Override
