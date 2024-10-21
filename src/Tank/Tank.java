@@ -6,6 +6,10 @@ import Doctrina.MovementController;
 
 import java.awt.*;
 
+// resources
+// - images
+// - audios
+
 public class Tank extends ControllableEntity {
 
     private int cooldown = 0;
@@ -29,6 +33,7 @@ public class Tank extends ControllableEntity {
 
     @Override
     public void update() {
+        super.update();
         moveWithController();
         cooldown--;
         if (cooldown < 0) {
@@ -43,5 +48,9 @@ public class Tank extends ControllableEntity {
         // float alpha - (cooldown / 40f)
         int coolDownWidth = (cooldown * width) / 40;
         canvas.drawRectangle(x, y - 5, coolDownWidth, 2, Color.RED);
+
+        if (hasMove()) {
+            drawHitBox(canvas);
+        }
     }
 }
