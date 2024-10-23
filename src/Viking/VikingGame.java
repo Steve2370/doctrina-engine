@@ -75,6 +75,9 @@ public class VikingGame extends Game {
         if (player.getY() < tree.getY() + 52) {
             player.draw(canvas);
             tree.draw(canvas);
+        } else {
+            tree.draw(canvas);
+            player.draw(canvas);
         }
     }
 }
