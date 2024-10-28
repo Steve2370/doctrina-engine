@@ -5,10 +5,10 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public enum SoundEffect {
-    FIRE("audios/fire.wav");
+    FIRE("audios/fire.wav"),
     MURLOC("audios/murloc.wav");
 
-    private String path;
+    private final String path;
 
     SoundEffect(String path) {
         this.path = path;

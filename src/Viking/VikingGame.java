@@ -56,7 +56,7 @@ public class VikingGame extends Game {
             soundCoolDown = 100;
 
             // FIRE
-
+            SoundEffect.MURLOC.play();
         }
     }
 
