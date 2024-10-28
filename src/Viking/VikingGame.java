@@ -56,16 +56,7 @@ public class VikingGame extends Game {
             soundCoolDown = 100;
 
             // FIRE
-            try {
-                Clip clip = AudioSystem.getClip();
-                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
-                        getClass().getClassLoader().getResourceAsStream("audios/fire.wav")
-                );
-                clip.open(audioInputStream);
-                clip.start();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
